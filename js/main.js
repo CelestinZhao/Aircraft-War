@@ -233,7 +233,7 @@
                     lagoutw = this.layout.offsetWidth,
                     lagouth = this.layout.offsetHeight;
 
-                p.onmousedown = function(event){
+                p.ontouchstart = function(event){
 
                     var px = p.offsetLeft,
                         py = p.offsetTop,
@@ -241,7 +241,7 @@
                         dx = event.clientX - lagoutx - p.offsetWidth/2,
                         dy = event.clientY - lagouty - p.offsetHeight/2;
 
-                    document.onmousemove = function(event){
+                    document.ontouchmove = function(event){
 
                         dx = event.clientX - lagoutx - p.offsetWidth / 2;
                         dy = event.clientY - lagouty - p.offsetHeight / 2;
@@ -262,9 +262,9 @@
 
                     }
 
-                    document.onmouseup = function(event){
+                    document.ontouchend = function(event){
 
-                        document.onmousemove = null;
+                        document.ontouchmove = null;
 
                     }
 
