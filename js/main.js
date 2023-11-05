@@ -51,7 +51,7 @@ var myGame = {
             mystart.style.display = 'none';
             That.createPlane();
             document.getElementsByClassName('score')[0].style.display = 'block';
-            document.getElementById("fire").play();
+            // document.getElementById("fire").play();
 
         };
 
@@ -202,7 +202,7 @@ var myGame = {
                         EN[i].setAttribute('blood',Blood);
                     }else{
 
-                        document.getElementById("boom").play();
+                        // document.getElementById("boom").play();
                         That.score.innerHTML = (parseInt(That.score.innerHTML) + parseInt(EN[i].getAttribute('score')));
                         EN[i].style.background = 'url(img/qw.png) center no-repeat / cover';
                         var pare = EN[i];
@@ -311,8 +311,8 @@ var myGame = {
 
     gameOver : function(){
 
-        document.getElementById("fire").pause();
-        document.getElementById('bigboom').play();
+        // document.getElementById("fire").pause();
+        // document.getElementById('bigboom').play();
 
         clearInterval(this.plane.itimer2);
         clearInterval(this.plane.itimer1);
