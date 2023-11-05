@@ -269,6 +269,43 @@ var myGame = {
             }
 
         }
+
+        p.ontouchstart = function(event){
+
+            var px = p.offsetLeft,
+              py = p.offsetTop,
+
+              dx = event.clientX - lagoutx - p.offsetWidth/2,
+              dy = event.clientY - lagouty - p.offsetHeight/2;
+
+            document.ontouchmove = function(event){
+
+                dx = event.clientX - lagoutx - p.offsetWidth / 2;
+                dy = event.clientY - lagouty - p.offsetHeight / 2;
+
+                if( dx <= 0 ){
+                    dx = 0 ;
+                }else if( dx >= lagoutw - p.offsetWidth){
+                    dx = lagoutw - p.offsetWidth;
+                }
+
+                if( dy <= 0 ){
+                    dy = 0;
+                }else if( dy >= lagouth - p.offsetHeight){
+                    dy =  lagouth - p.offsetHeight;
+                }
+
+                p.style.cssText = 'left :' + dx +'px; top :' + dy + 'px';
+
+            }
+
+            document.ontouchend = function(event){
+
+                document.ontouchmove = null;
+
+            }
+
+        }
     },
 
     gameOver : function(){
