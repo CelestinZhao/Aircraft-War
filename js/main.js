@@ -275,13 +275,13 @@ var myGame = {
             var px = p.offsetLeft,
               py = p.offsetTop,
 
-              dx = event.clientX - lagoutx - p.offsetWidth/2,
-              dy = event.clientY - lagouty - p.offsetHeight/2;
+              dx = event.touches[0].clientX - lagoutx - p.offsetWidth/2,
+              dy = event.touches[0].clientY - lagouty - p.offsetHeight/2;
 
             document.ontouchmove = function(event){
 
-                dx = event.clientX - lagoutx - p.offsetWidth / 2;
-                dy = event.clientY - lagouty - p.offsetHeight / 2;
+                dx = event.touches[0].clientX - lagoutx - p.offsetWidth / 2;
+                dy = event.touches[0].clientY - lagouty - p.offsetHeight / 2;
 
                 if( dx <= 0 ){
                     dx = 0 ;
@@ -299,7 +299,7 @@ var myGame = {
 
             }
 
-            document.ontouchend = function(event){
+            document.ontouchend = function(){
 
                 document.ontouchmove = null;
 
