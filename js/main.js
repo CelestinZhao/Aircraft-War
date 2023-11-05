@@ -2,6 +2,7 @@
 
 window.onload = function(){
     myGame.init();
+    document.body.addEventListener('touchmove', function (e) { e.preventDefault() }, { passive: false });
 }
 
 var myGame = {
